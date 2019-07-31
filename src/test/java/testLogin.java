@@ -18,7 +18,7 @@ import com.test.service.login;
 @ContextConfiguration("classpath:applicateion.xml")
 public class testLogin {
     @Autowired
-    private LoginMapper lo;
+    private LoginMapper login;
     @BeforeClass
     public static void begin() {
 		// TODO Auto-generated method stub
@@ -37,16 +37,16 @@ public class testLogin {
 	public void test() {
 	System.out.println("正经测试开始");
 	User user = new User();
-	user.setuNmae("aaa");
+	user.setuName("abc");
 	user.setuPassword("123456");
-	lo.addUser(user);
+	login.addUser(user);
 	}
     @Test
     public void login() {
     	User user = new User();
-    	user.setuNmae("aaa");
+    	user.setuName("abc");
     	user.setuPassword("123456");
-    	lo.findUser(user);
+    	login.findUser(user);
     	System.out.println("测试成功");
     }
 }
