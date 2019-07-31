@@ -2,12 +2,12 @@ package com.test.pojo;
 
 public class User {
 	private Integer uId;
-	private String uNmae;
+	private String uName;
 	private String uPassword;
 
 	public User(User user) {
 		this.uId = user.uId;
-		this.uNmae = user.uNmae;
+		this.uName = user.uName;
 		this.uPassword = user.uPassword;
 		System.out.println(user.toString());
 	}
@@ -24,12 +24,12 @@ public class User {
 		this.uId = uId;
 	}
 
-	public String getuNmae() {
-		return uNmae;
+	public String getuName() {
+		return uName;
 	}
 
-	public void setuNmae(String uNmae) {
-		this.uNmae = uNmae;
+	public void setuName(String uName) {
+		this.uName = uName;
 	}
 
 	public String getuPassword() {
@@ -42,7 +42,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [uId=" + uId + ", uNmae=" + uNmae + ", uPassword=" + uPassword + "]";
+		return "User [uId=" + uId + ", uName=" + uName + ", uPassword=" + uPassword + "]";
 	}
 
+	
 }
