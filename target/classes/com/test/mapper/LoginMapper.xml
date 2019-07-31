@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.test.mapper.LoginMapper">
+	<select id="findUser">
+	select uUsername,uPassword from user where uUsername=#{User.username} and uPassword=#{User.password}
+	</select>
+	
+	
+	<insert id="addUser">
+	insert into User values (#{User.username},#{User.password}); 
+	</insert>
+	</mapper>
