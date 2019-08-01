@@ -1,5 +1,7 @@
 package com.test.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,19 +13,19 @@ public class LoginService implements login {
 	@Autowired
 	private LoginMapper loginMapper;
 
-	public String login(User user) {
+	public List<User> login(User user) {
 		// TODO Auto-generated method stub
-			User loginSuccess = loginMapper.findUser(user);
-			if (loginSuccess!=null) {
-				return "登录成功";
-			} return "登录失败";
+		List<User> loginSuccess = loginMapper.findUser(user);
+			if (loginSuccess.size()!=0) {
+				return loginSuccess;
+			} return  null;
 		
 	}
 
-	public String Register(User user) {
+	public int Register(User user) {
 		// TODO Auto-generated method stub
-		User registerSuccess = loginMapper.addUser(user);
-		return "注册成功";
+      int  a = loginMapper.addUser(user);
+	  return a;
 	}
 
 }

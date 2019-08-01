@@ -1,5 +1,7 @@
 package com.test.mapper;
 
+import java.util.List;
+
 import com.test.pojo.User;
 
 /**
@@ -10,10 +12,10 @@ public interface LoginMapper {
 /**
  * 登录	
  */
-public User findUser(User user);
+public List<User> findUser(User user);
 /**
  * 注册
  */
-public User addUser(User user);
+public int addUser(User user) ;
 
 }

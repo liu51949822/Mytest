@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import javax.xml.stream.events.StartDocument;
 
 import org.junit.Before;
@@ -19,6 +21,8 @@ import com.test.service.login;
 public class testLogin {
     @Autowired
     private LoginMapper login;
+    @Autowired
+    private login lo;
     @BeforeClass
     public static void begin() {
 		// TODO Auto-generated method stub
@@ -35,18 +39,28 @@ public class testLogin {
 
 	@Test(timeout = 9000)
 	public void test() {
-	System.out.println("正经测试开始");
 	User user = new User();
 	user.setuName("abc");
 	user.setuPassword("123456");
-	login.addUser(user);
+	int s = login.addUser(user);
+    assertEquals(1, s);
+	System.out.println(s);
+	}
+	@Test
+	public void tt() {
+		User use = new User();
+		use.setuName("abc");
+		use.setuPassword("123456");
+		int a = lo.Register(use);
+		assertEquals(1,a);
 	}
     @Test
     public void login() {
     	User user = new User();
     	user.setuName("abc");
     	user.setuPassword("123456");
-    	login.findUser(user);
-    	System.out.println("测试成功");
+    	List<User> as = lo.login(user);
+    	as.stream().forEach(S->{System.out.println(S);});
+        
     }
 }
