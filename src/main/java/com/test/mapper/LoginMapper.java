@@ -16,6 +16,8 @@ public List<User> findUser(User user);
 /**
  * 注册
  */
-public int addUser(User user) ;
-
+//public int addUser(User user) ;
+//
+//}
+public boolean addUser(User user);
 }

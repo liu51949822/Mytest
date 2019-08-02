@@ -1,7 +1,7 @@
 package com.test.pojo;
 
 public class User {
-	private Integer uId;
+	private int uId;
 	private String uName;
 	private String uPassword;
 
@@ -16,11 +16,11 @@ public class User {
 
 	}
 
-	public Integer getuId() {
+	public int getuId() {
 		return uId;
 	}
 
-	public void setuId(Integer uId) {
+	public void setuId(int uId) {
 		this.uId = uId;
 	}
 

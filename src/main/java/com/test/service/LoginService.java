@@ -22,10 +22,14 @@ public class LoginService implements login {
 		
 	}
 
-	public int Register(User user) {
+//	public int Register(User user) {
+//		// TODO Auto-generated method stub
+//      int  a = loginMapper.addUser(user);
+//	  return a;
+//	}
+	public boolean Register(User user) {
 		// TODO Auto-generated method stub
-      int  a = loginMapper.addUser(user);
-	  return a;
+	  return  loginMapper.addUser(user);
 	}
 
 }

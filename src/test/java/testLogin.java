@@ -42,8 +42,9 @@ public class testLogin {
 	User user = new User();
 	user.setuName("abc");
 	user.setuPassword("123456");
-	int s = login.addUser(user);
-    assertEquals(1, s);
+//	int s = login.addUser(user);
+//    assertEquals(1, s);
+	boolean s = login.addUser(user);
 	System.out.println(s);
 	}
 	@Test

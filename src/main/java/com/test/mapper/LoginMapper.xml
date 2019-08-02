@@ -8,7 +8,7 @@
 	</select>
 	
 	
-	<insert id="addUser"  useGeneratedKeys="true" parameterType="com.test.pojo.User">
+	<insert id="addUser" keyProperty="uId"  useGeneratedKeys="true"  parameterType="com.test.pojo.User"  >
 	insert into user (uName,uPassword) values (#{uName},#{uPassword}); 
 	</insert>
 	</mapper>

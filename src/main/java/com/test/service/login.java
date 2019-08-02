@@ -17,5 +17,8 @@ public List<User> login(User user);
 /**
  * 注册
  */
-public int Register(User user);
+//public int Register(User user);
+//}
+
+public  boolean Register(User user);
 }
