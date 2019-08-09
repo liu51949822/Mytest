@@ -29,21 +29,20 @@ public class loginController {
 	@Autowired
 	private login  login;
 	@RequestMapping("/login")
-   public ModelAndView loginOpercation(HttpSession session,HttpServletRequest request,HttpServletResponse response){ 
+   public String loginOpercation(HttpSession session,HttpServletRequest request,HttpServletResponse response){ 
 	    User user = new User();
-		user.setuName(request.getAttribute("name").toString());
-		user.setuPassword(request.getAttribute("password").toString());
+		user.setuName((request.getParameter("username")).toString());
+		user.setuPassword((request.getParameter("password")).toString());
 	    List<User> list = login.login(user);
-	    ModelAndView modelAndView = new ModelAndView("index.jsp");
-	    Cookie[] c = request.getCookies();
-        if (list.size()!=0&&list.size()>0||c.length!=0) {
-            
-        	modelAndView.addObject("message","AAAAAAAAAAA");
-        	Integer i=((Integer)session.getAttribute("ccount"))>0?0:+1;
-           return modelAndView;
+	    
+	    if (list!=null) {
 			
-	}
-        	return modelAndView; }
+	    	Cookie[] c = request.getCookies();
+	    	Integer i=((Integer)session.getAttribute("ccount"))>0?0:+1;
+	    	return "show";
+		}
+			
+        	return "error"; }
 //   public ModelAndView reginsterOpercation() {}
     		
 }
